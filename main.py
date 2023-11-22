@@ -94,6 +94,8 @@ btn7 = Button(main, text="7", padx=40, pady=20, command=lambda: btnCl(7))
 btn8 = Button(main, text="8", padx=40, pady=20, command=lambda: btnCl(8))
 btn9 = Button(main, text="9", padx=40, pady=20, command=lambda: btnCl(9))
 
+
+
 btnCalc = Button(main, text="=", padx=40, pady=52, command=btnCalculate, bg='#0052cc', fg='#ffffff')
 bttnAdd = Button(main, text="+", padx=40, pady=52, command=btnAdd)
 bttnSub = Button(main, text="-", padx=40, pady=20, command=btnSub)
