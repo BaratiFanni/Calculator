@@ -1,0 +1,4 @@
+mûvelet: 5 + 5 = 10
+mûvelet: 5 / 5 = 1.0
+mûvelet: 5 * 5 = 25
+mûvelet: 5 - 5 = 0
