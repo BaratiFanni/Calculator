@@ -8,8 +8,9 @@ Rövid leírás:
   számításokat egy txt fájlba menti
 
 Modulok:
-  main - függvényeket, hibakezlés, ablak értékeit, entry-t, gombokat, 
+  main - függvényeket, hibakezelés, ablak értékeit, entry-t, gombokat 
   fileWrite - writeFile fájlba író függvény 
+  calcMessage - különboző hibák ablakainak a messagebox-a
 
 
 Függvények:
@@ -22,3 +23,6 @@ Függvények:
   btnCalculate - ámot az entry-be elmenti sNum ként, törli a entry értékét, 
       if-elif-else elágazással kiszámolja az értéket amit a result-ba ment,
       messagebox-ba kiírja az eredményt, majd fileWrite writeFile függvénnyel fájlba menti
+  failedWriteFile -  messagebox, hiba, sikeretelen fájlba írás
+  valueError -  messagebox, hiba, értékbeli (pl.:5++5=)
+  zeroDiv - messagebox, hiba, 0-val nem osztunk 
