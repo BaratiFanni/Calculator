@@ -8,8 +8,8 @@ Rövid leírás:
   számításokat egy txt fájlba menti
 
 Modulok:
-  main - 
-  fileWrite- 
+  main - függvényeket, hibakezlés, ablak értékeit, entry-t, gombokat, 
+  fileWrite - writeFile fájlba író függvény 
 
 
 Függvények:
