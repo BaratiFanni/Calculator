@@ -1,6 +1,5 @@
 from tkinter import *
 from tkinter import END
-from tkinter import font
 from tkinter import messagebox
 import fileWrite
 
@@ -55,22 +54,29 @@ def btnDiv():
 
 
 def btnCalculate():
-    sNumber = e.get()
-    global sNum
-    global result
-    sNum = int(sNumber)
-    e.delete(0, END)
-    if math == "+":
-        result = int(fNum) + int(sNum)
-    elif math == "-":
-        result = int(fNum) - int(sNum)
-    elif math == "*":
-        result = int(fNum) * int(sNum)
-    else:
-        result = int(fNum) / int(sNum)
-
-    messagebox.showinfo("Eredmény", str(result))
-    fileWrite.writeFile('results.txt', f'művelet: {fNum} {math} {sNum} = {result}')
+    try:
+        sNumber = e.get()
+        global sNum
+        global result
+        sNum = int(sNumber)
+        e.delete(0, END)
+        if math == "+":
+            result = int(fNum) + int(sNum)
+        elif math == "-":
+            result = int(fNum) - int(sNum)
+        elif math == "*":
+            result = int(fNum) * int(sNum)
+        else:
+            result = int(fNum) / int(sNum)
+        fileWrite.writeFile('results.txt', f'művelet: {fNum} {math} {sNum} = {result}')
+        try:
+            messagebox.showinfo("Eredmény", str(result))
+        except Exception as ex:
+            messagebox.showerror("Hiba", f"Nem sikerült a fájlba írás: {ex}")
+    except ValueError:
+        messagebox.showerror("Érvénytelen bemenet", "Érték beli hiba")
+    except ZeroDivisionError:
+        messagebox.showerror("Hiba", "0-val caló osztás nem értelmezett")
 
 
 main = Tk()
