@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import END
 from tkinter import messagebox
 import fileWrite
+import calcMessage
 
 fNum = 0
 sNum = 0
@@ -72,11 +73,11 @@ def btnCalculate():
         try:
             messagebox.showinfo("Eredmény", str(result))
         except Exception as ex:
-            messagebox.showerror("Hiba", f"Nem sikerült a fájlba írás: {ex}")
+            calcMessage.failedWriteFile({ex})
     except ValueError:
-        messagebox.showerror("Érvénytelen bemenet", "Érték beli hiba")
+        calcMessage.valueError()
     except ZeroDivisionError:
-        messagebox.showerror("Hiba", "0-val caló osztás nem értelmezett")
+        calcMessage.zeroDiv()
 
 
 main = Tk()
