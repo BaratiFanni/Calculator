@@ -1,22 +1,13 @@
 from tkinter import *
 from tkinter import END
+from tkinter import font
 from tkinter import messagebox
 import fileWrite
 
-fNum = None
-sNum = None
-result = None
+fNum = 0
+sNum = 0
+result = 0
 math = ""
-
-main = Tk()
-main.title('Számológép')
-main.geometry('385x400')
-main.configure(bg='lightgray')
-main.minsize(width=330, height=80)
-
-e = Entry(main, width=20, font=('Arial', 20))
-e.grid(row=0, column=1, columnspan=4, padx=10, pady=10)
-
 
 # Függvenyek
 
@@ -78,10 +69,21 @@ def btnCalculate():
     else:
         result = int(fNum) / int(sNum)
 
-    messagebox.showinfo("Eredmény", result)
+    messagebox.showinfo("Eredmény", str(result))
     fileWrite.writeFile('results.txt', f'művelet: {fNum} {math} {sNum} = {result}')
 
+
+main = Tk()
+main.title('Számológép')
+main.geometry('385x400')
+main.configure(bg='lightgray')
+main.minsize(width=330, height=80)
+
+e = Entry(main, width=20, font=('Arial', 20))
+e.grid(row=0, column=1, columnspan=4, padx=10, pady=10)
+
 # Gombok definiálása
+
 
 btn0 = Button(main, text="0", padx=40, pady=20, command=lambda: btnCl(0))
 btn1 = Button(main, text="1", padx=40, pady=20, command=lambda: btnCl(1))
@@ -93,7 +95,6 @@ btn6 = Button(main, text="6", padx=40, pady=20, command=lambda: btnCl(6))
 btn7 = Button(main, text="7", padx=40, pady=20, command=lambda: btnCl(7))
 btn8 = Button(main, text="8", padx=40, pady=20, command=lambda: btnCl(8))
 btn9 = Button(main, text="9", padx=40, pady=20, command=lambda: btnCl(9))
-
 
 
 btnCalc = Button(main, text="=", padx=40, pady=52, command=btnCalculate, bg='#0052cc', fg='#ffffff')
